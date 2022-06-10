@@ -9,4 +9,5 @@ export const requests ={
   feactHorrorMovies:`${BASE_URL}/discover/tv?api_key=${API_KEY}&with_genres=27`,
   feactRomanceMovies:`${BASE_URL}/discover/tv?api_key=${API_KEY}&with_genres=10749`,
   feactDocumentMovies:`${BASE_URL}/discover/tv?api_key=${API_KEY}&with_genres=99`,
+  feactLatest:`${BASE_URL}/movie/550?api_key=${API_KEY}`,
 }

@@ -9,12 +9,20 @@ import { Link } from "react-router-dom";
 
 
 export const Row = ({ title, fetchUrl , isLargeRow }: Props) => {
-  const [movies, setMovies] = useState<Movie[]>([]);
-
+  const [movies, setMovie] = useState<Movie[]>([]);
+  const getMovie = () =>{
+    
+  }
   useEffect(() => {
     async function fetchData() {
+      // if(fetchUrl.includes("movie")){
+      //   for(let i = 0; i < 20; i++){
+      //     const request = await axios.get(fetchUrl);
+      //     setMovie(request.data.results);
+      //   }
+      // }
       const request = await axios.get(fetchUrl);
-      setMovies(request.data.results);
+      setMovie(request.data.results);
       return request;
     }
     fetchData();
@@ -34,7 +42,7 @@ export const Row = ({ title, fetchUrl , isLargeRow }: Props) => {
           <img 
           className="lg:h-48 md:h-36 w-full object-cover object-center"
           src={`${IMAGE_URL}${
-            isLargeRow ? movie.poster_path : movie.backdrop_path
+              movie.poster_path ? movie.poster_path : movie.backdrop_path
           }`}          
           alt={movie.name} />
           <div className="p-6">
@@ -42,7 +50,7 @@ export const Row = ({ title, fetchUrl , isLargeRow }: Props) => {
             <h1 className="title-font text-lg font-medium text-gray-900 mb-3">{movie.name}</h1>
             <p className="leading-relaxed mb-3">{truncate(movie.overview,50)}</p>
             <div className="flex items-center flex-wrap ">
-              <a className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Learn More
+              <a className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0" onClick={()=>console.log('hello')}>Learn More
               </a>
             </div>
           </div>
