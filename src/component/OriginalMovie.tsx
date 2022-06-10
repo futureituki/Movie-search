@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import {IMAGE_URL} from '../utils/constant'
 import { Props , Movie } from "../type/MovieType";
 import { truncate } from "../utils/utils";
+import { Link } from "react-router-dom";
 
 
 
@@ -23,7 +24,7 @@ export const Row = ({ title, fetchUrl , isLargeRow }: Props) => {
 
   return(
     <>
-    <h3>{title}</h3>
+    <Link to="/"><h3 className="font-bold m-5">{title}</h3></Link>
     <section className="text-gray-600 body-font">
   <div className="container px-5 py-24 mx-auto">
     <div className="flex flex-wrap -m-4">

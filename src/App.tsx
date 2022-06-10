@@ -1,15 +1,13 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import { Row } from './component/Row';
-import { requests } from './api/request';
+import React, { VFC,memo } from 'react';
+import { Header } from './component/Header';
 
-function App() {
+
+export const App:React.VFC = () => {
   return (
-    <div className="App">
-      <Row title={"NETFLIX ORIGUINALS"} fetchUrl={requests.feachTrending} isLargeRow={true}/>
-    </div>
+    <>
+    <Header/>
+    </>
   );
 }
 
-export default App;
