@@ -4,12 +4,12 @@ import axios from "axios";
 import { Movie } from "../type/MovieType";
 import { IMAGE_URL } from "../utils/constant";
 import { truncate } from "../utils/utils";
-
+import { Link } from "react-router-dom";
 
 export const Search = () => {
   const [word,setWord] = useState<string>('');
   const [movie,setMovie] = useState<Movie[]>([])
-  const BASE_URL = "https://api.themoviedb.org/3/search/movie?api_key=515c08c892c53bed3e95145407cde7d8&query=";
+  const BASE_URL = "https://api.themoviedb.org/3/search/movie?api_key=515c08c892c53bed3e95145407cde7d8&language=ja-JP&query=";
 
   const getWord = (e:React.ChangeEvent<HTMLInputElement>) => {
     setWord(e.target.value);
@@ -24,7 +24,6 @@ export const Search = () => {
         DataFetch();
       }
     },[word])
-    {console.log(movie)}
   return(
     <>
     <div className="relative w-40 sm:w-auto xl:mr-4 lg:mr-0 sm:mr-4 mr-2">
@@ -51,8 +50,8 @@ export const Search = () => {
             <h1 className="title-font text-lg font-medium text-gray-900 mb-3">{m.title}</h1>
             <p className="leading-relaxed mb-3">{truncate(m.overview,50)}</p>
             <div className="flex items-center flex-wrap justify-between ">
-              <a className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0" onClick={()=>console.log('hello')}>Learn More
-              </a>
+            <Link to={`${m.id}`} className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">Learn More
+              </Link>
               <p><span className="px-3">evaluation</span>{m.vote_average}</p>
             </div>
           </div>
