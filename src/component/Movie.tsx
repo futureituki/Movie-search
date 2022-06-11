@@ -10,9 +10,6 @@ import { Link } from "react-router-dom";
 
 export const Row = ({ title, fetchUrl , isLargeRow }: Props) => {
   const [movies, setMovie] = useState<Movie[]>([]);
-  const getMovie = () =>{
-    
-  }
   useEffect(() => {
     async function fetchData() {
       // if(fetchUrl.includes("movie")){
@@ -27,9 +24,7 @@ export const Row = ({ title, fetchUrl , isLargeRow }: Props) => {
     }
     fetchData();
   }, [fetchUrl]);
-
-  console.log(movies);
-
+  console.log(movies)
   return(
     <>
     <Link to="/"><h3 className="font-bold m-5">{title}</h3></Link>
@@ -47,11 +42,12 @@ export const Row = ({ title, fetchUrl , isLargeRow }: Props) => {
           alt={movie.name} />
           <div className="p-6">
             <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">{title}</h2>
-            <h1 className="title-font text-lg font-medium text-gray-900 mb-3">{movie.name}</h1>
+            <h1 className="title-font text-lg font-medium text-gray-900 mb-3">{movie.name ? movie.name : movie.title }</h1>
             <p className="leading-relaxed mb-3">{truncate(movie.overview,50)}</p>
             <div className="flex items-center flex-wrap ">
               <a className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0" onClick={()=>console.log('hello')}>Learn More
               </a>
+              <p><span className="px-3">evaluation</span>{movie.vote_average}</p>
             </div>
           </div>
         </div>

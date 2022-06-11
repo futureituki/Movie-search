@@ -50,9 +50,10 @@ export const Search = () => {
           <div className="p-6">
             <h1 className="title-font text-lg font-medium text-gray-900 mb-3">{m.title}</h1>
             <p className="leading-relaxed mb-3">{truncate(m.overview,50)}</p>
-            <div className="flex items-center flex-wrap ">
+            <div className="flex items-center flex-wrap justify-between ">
               <a className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0" onClick={()=>console.log('hello')}>Learn More
               </a>
+              <p><span className="px-3">evaluation</span>{m.vote_average}</p>
             </div>
           </div>
         </div>
