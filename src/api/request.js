@@ -1,4 +1,4 @@
-export const API_KEY = "515c08c892c53bed3e95145407cde7d8";
+export const API_KEY = "XXX";
 export const BASE_URL = "https://api.themoviedb.org/3"
 export const requestsTv ={
   feachTrending:`${BASE_URL}/trending/all/week?api_key=${API_KEY}&language=ja-JP`,
