@@ -15,12 +15,6 @@ export const Row = ({ title, fetchUrl , isLargeRow }: Props) => {
   const [trailerUrl,setTrailerUrl] = useState<string|null>("");
   useEffect(() => {
     async function fetchData() {
-      // if(fetchUrl.includes("movie")){
-      //   for(let i = 0; i < 20; i++){
-      //     const request = await axios.get(fetchUrl);
-      //     setMovie(request.data.results);
-      //   }
-      // }
       const request = await axios.get(fetchUrl);
       setMovie(request.data.results);
       return request;
@@ -34,7 +28,6 @@ export const Row = ({ title, fetchUrl , isLargeRow }: Props) => {
       autoplay:1,
     }
   }
-  console.log(movies)
   const handleClick = async (movie:Movie2) => {
     if(trailerUrl){
       setTrailerUrl("");
@@ -45,7 +38,6 @@ export const Row = ({ title, fetchUrl , isLargeRow }: Props) => {
           setTrailerUrl(trailerUrl.data.results[0]?.key);
         }
       }
-      console.log(trailerUrl)
       return(
     <>
     <Link to="/"><h3 className="font-bold m-5">{title}</h3></Link>

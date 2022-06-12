@@ -18,16 +18,25 @@ export type Movie = {
 export type Movie2 = Movie & {
   videos:boolean,
 }
-export type Banners = {
-  videos:boolean,
-  id:string,
-}
+// export type Banners = {
+//   videos:boolean,
+//   id:string,
+// }
 export type movieProps = {
   title? : string,
   name? : string,
   original_name? : string,
   backdrop_path? : string,
   overview? : string,
+}
+export type Banners = {
+  title? : string,
+  name? : string,
+  original_name? : string,
+  backdrop_path? : string,
+  overview? : string,
+  vote_average:number,
+  homepage? : string,
 }
 
 export type Options = {
