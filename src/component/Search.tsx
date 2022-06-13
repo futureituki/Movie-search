@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import axios from "axios";
 
 import { Movie } from "../type/MovieType";
-import { IMAGE_URL } from "../utils/constant";
+import { POSTER_IMAGE_URL } from "../utils/constant";
 import { truncate } from "../utils/utils";
 import { Link } from "react-router-dom";
 
@@ -42,7 +42,7 @@ export const Search = () => {
         <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
           <img 
           className="lg:h-48 md:h-36 w-full object-cover object-center"
-          src={`${IMAGE_URL}${
+          src={`${POSTER_IMAGE_URL}${
               m.poster_path ? m.poster_path : m.backdrop_path
           }`}          
           alt={m.name} />

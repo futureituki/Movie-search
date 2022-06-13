@@ -18,25 +18,20 @@ export type Movie = {
 export type Movie2 = Movie & {
   videos:boolean,
 }
-// export type Banners = {
-//   videos:boolean,
-//   id:string,
-// }
+
 export type movieProps = {
   title? : string,
   name? : string,
   original_name? : string,
   backdrop_path? : string,
   overview? : string,
+  // published_at? :string,
 }
-export type Banners = {
-  title? : string,
-  name? : string,
-  original_name? : string,
-  backdrop_path? : string,
-  overview? : string,
-  vote_average:number,
+export type Banners = movieProps & {
+  vote_average? :number,
   homepage? : string,
+  release_date? : number,
+  first_air_date? : number
 }
 
 export type Options = {
