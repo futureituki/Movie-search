@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-import {IMAGE_URL} from '../utils/constant'
+import {POSTER_IMAGE_URL} from '../utils/constant'
 import { Props , Movie2, Options } from "../type/MovieType";
 import { truncate } from "../utils/utils";
 import { Link } from "react-router-dom";
@@ -49,7 +49,7 @@ export const Row = ({ title, fetchUrl , isLargeRow }: Props) => {
         <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden">
           <img 
           className="lg:h-48 md:h-36 w-full object-cover object-center"
-          src={`${IMAGE_URL}${
+          src={`${POSTER_IMAGE_URL}${
               movie.poster_path ? movie.poster_path : movie.backdrop_path
           }`}          
           alt={movie.name}
