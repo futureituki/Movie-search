@@ -1,4 +1,4 @@
-export const API_KEY = "XXX";
+export const API_KEY = process.env.REACT_APP_YOUTUBE_API_KEY;
 export const BASE_URL = "https://api.themoviedb.org/3";
 export const requestsTv = {
   feachTrending: `${BASE_URL}/trending/all/week?api_key=${API_KEY}&language=ja-JP`,
